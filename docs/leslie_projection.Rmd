@@ -60,8 +60,10 @@ for (i in 2:length(time_yr)) {
 
 
 # The rest is wrangling & visualization (run to check it out):
+# update column names for pop stages
 colnames(proj_year) <- c("eggs", "fry", "juvenile", "adult")
 
+#convert to dataframe
 proj_df <- data.frame(time_yr, proj_year) %>% 
   pivot_longer(cols = -time_yr, names_to = "lifestage", values_to = "stage_population")
 
